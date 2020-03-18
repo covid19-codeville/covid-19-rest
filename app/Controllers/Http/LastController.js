@@ -3,11 +3,12 @@ const Redis = use('Redis')
 class LastController {
 
   async index () {
-    const [ data = '{}' ] = await Redis.zrevrange('cv19:data', 0, 1)
+    const [ data = '{}', updated = 0 ] = await Redis.zrevrange('cv19:data', 0, 1, 'WITHSCORES')
 
     if (data) {
       const { active = null, closed = null } = JSON.parse(data)
       return {
+        updated: parseInt(updated),
         active,
         closed
       }
@@ -17,7 +18,7 @@ class LastController {
   }
 
   async full () {
-    const [ dataJSON = '{}' ] = await Redis.zrevrange('cv19:data', 0, 1)
+    const [ dataJSON = '{}', updated = 0 ] = await Redis.zrevrange('cv19:data', 0, 1, 'WITHSCORES')
     const [ countriesJSON = '[]' ] = await Redis.zrevrange('cv19:countries', 0, 1)
 
     const data = JSON.parse(dataJSON)
@@ -25,6 +26,7 @@ class LastController {
 
     if (data) {
       return {
+        updated: parseInt(updated),
         data,
         countries
       }
@@ -36,8 +38,11 @@ class LastController {
   async country ({ request }) {
     const result = await this.countries({ request })
 
-    if (result.length > 0) {
-      return result.shift()
+    if (result.updated) {
+      return {
+        updated: result.updated,
+        items: result.items.shift()
+      }
     }
 
     return {}
@@ -51,12 +56,13 @@ class LastController {
       return result
     }
 
-    return []
+    return {}
   }
 
   async _findCountries (filter = '') {
     const countriesReq = decodeURIComponent(filter).split(',')
-    const [ data ] = await Redis.zrevrange('cv19:countries', 0, 1)
+    const [ data, updated ] = await Redis.zrevrange('cv19:countries', 0, 1, 'WITHSCORES')
+
     if (data) {
       const countries = JSON.parse(data)
       const countryInfo = countries.filter(countryObj => {
@@ -65,7 +71,10 @@ class LastController {
         })
       })
 
-      return countryInfo
+      return {
+        updated: parseInt(updated),
+        items: countryInfo
+      }
     }
 
     return []
