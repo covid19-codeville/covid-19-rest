@@ -1,6 +1,8 @@
 # Node modules
 node_modules
 
+.DS_Store
+
 # Adonis directory for storing tmp files
 tmp
 
