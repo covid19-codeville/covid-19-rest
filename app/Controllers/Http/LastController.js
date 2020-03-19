@@ -1,4 +1,5 @@
 const Redis = use('Redis')
+const i18n = use('App/Helpers/countries-i18n')
 
 class LastController {
 
@@ -28,7 +29,10 @@ class LastController {
       return {
         updated: parseInt(updated),
         data,
-        countries
+        countries: countries.map(countryObj => ({
+          ...countryObj,
+          label: i18n(countryObj.country)
+        }))
       }
     }
 
@@ -70,6 +74,10 @@ class LastController {
           return countryObj.country.toLowerCase().localeCompare(country.toLowerCase()) === 0
         })
       })
+        .map(countryObj => ({
+          ...countryObj,
+          label: i18n(countryObj.country)
+        }))
 
       return {
         updated: parseInt(updated),
