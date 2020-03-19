@@ -17,6 +17,7 @@
 const Route = use('Route')
 
 Route.group(() => {
+  Route.get('/', 'SiteController.index')
   Route.get('last', 'LastController.index')
   Route.get('last/full', 'LastController.full')
   Route.get('last/join/:country', 'LastController.countries')
