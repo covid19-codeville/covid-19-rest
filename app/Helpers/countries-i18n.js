@@ -19,6 +19,7 @@ const i18n = {
   "Denmark": "Дания",
   "Japan": "Япония",
   "Madagascar": "Мадагаскар",
+  "Papua New Guinea": "Папуа-Новая Гвинея",
   "Malaysia": "Малайзия",
   "Canada": "Канада",
   "Portugal": "Португалия",
