@@ -17,7 +17,8 @@ module.exports = {
   |
   */
   origin: [
-    'http://localhost:3000',
+    /https?:\/\/localhost:?\d*/,
+    'http://localhost',
     'https://fiddle.jshell.net',
     'https://mosaica.ru',
     'https://uldelo.ru'
