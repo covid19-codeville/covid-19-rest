@@ -73,7 +73,7 @@ const i18n = {
   "Uruguay": "Уругвай",
   "Vietnam": "Вьетнам",
   "Hungary": "Венгрия",
-  "Brunei": "Бруней",
+  "Brunei ": "Бруней",
   "Faeroe Islands": "Фарерские острова",
   "Costa Rica": "Коста-Рика",
   "Jordan": "Иордания",
