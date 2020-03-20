@@ -1,3 +1,5 @@
+const sentry = use('Sentry')
+
 const i18n = {
   "China": "Китай",
   "Italy": "Италия",
@@ -185,5 +187,11 @@ const i18n = {
 }
 
 module.exports = country => {
-  return i18n[country] || country
+  if (i18n[country]) {
+    return i18n[country]
+  }
+  else {
+    sentry.captureException(new Error(`Country translation not found for ${country}`))
+    return country
+  }
 }
