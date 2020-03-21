@@ -29,6 +29,7 @@ const i18n = {
   "Brazil": "Бразилия",
   "Israel": "Израиль",
   "Greece": "Греция",
+  "Zimbabwe": "Зимбабве",
   "Pakistan": "Пакистан",
   "Qatar": "Катар",
   "Finland": "Финляндия",
