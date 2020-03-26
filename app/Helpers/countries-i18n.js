@@ -30,6 +30,11 @@ const i18n = {
   "Israel": "Израиль",
   "Greece": "Греция",
   "Zimbabwe": "Зимбабве",
+  "Timor-Leste": "Восточный Тимор",
+  "Uganda": "Уганда",
+  "Eritrea": "Эритрея",
+  "Mozambique": "Мозамбик",
+  "Grenada": "Гренада",
   "Pakistan": "Пакистан",
   "Qatar": "Катар",
   "Finland": "Финляндия",
@@ -102,6 +107,11 @@ const i18n = {
   "Venezuela": "Венесуэла",
   "Dominican Republic": "Доминиканская Республика",
   "Burkina Faso": "Буркина-Фасо",
+  "Dominica": "Доминика",
+  "Syria": "Сирия",
+  "Turks and Caicos": "Острова Теркс и Кайкос",
+  "Myanmar": "Мьянма (Бирма)",
+  "Belize": "Белиз",
   "Guadeloupe": "Гваделупа",
   "New Zealand": "Новая Зеландия",
   "Liechtenstein": "Лихтенштейн",
@@ -178,6 +188,7 @@ const i18n = {
   "Fiji": "Фиджи",
   "Gambia": "Гамбия",
   "Guinea": "Гвинея",
+  "Laos": "Лаос",
   "Vatican City": "Ватикан",
   "Montserrat": "Монтсеррат",
   "Nicaragua": "Никарагуа",
@@ -186,7 +197,12 @@ const i18n = {
   "Somalia": "Сомали",
   "Suriname": "Суринам",
   "Eswatini": "Эсватини",
-  "Togo": "Того"
+  "Togo": "Того",
+  "British Virgin Islands": "Британские Виргинские острова",
+  "Mali": "Мали",
+  "Saint Kitts and Nevis": "Сент-Китс и Невис",
+  "Guinea-Bissau": "Гвинея-Бисау",
+  "Libya": "Ливия"
 }
 
 module.exports = country => {
