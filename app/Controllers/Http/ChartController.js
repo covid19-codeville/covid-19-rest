@@ -18,7 +18,6 @@ class ChartController {
     try {
       const rawData = []
       let i = 0
-      let prevRecovered = 0
 
       for (; i < items.length; i++) {
         if (i % 2 !== 0) {
