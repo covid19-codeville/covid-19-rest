@@ -18,8 +18,11 @@ const Route = use('Route')
 
 Route.group(() => {
   Route.get('/', 'SiteController.index')
+  Route.get('countries', 'UtilController.index')
   Route.get('last', 'LastController.index')
   Route.get('last/full', 'LastController.full')
   Route.get('last/join/:country', 'LastController.countries')
   Route.get('last/in/:country', 'LastController.country')
+
+  Route.get('chart/:country', 'ChartController.index')
 }).prefix('api/v1')
