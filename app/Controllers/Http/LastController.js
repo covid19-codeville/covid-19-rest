@@ -1,5 +1,5 @@
 const Redis = use('Redis')
-const i18n = use('App/Helpers/countries-i18n')
+const { t } = use('App/Helpers/countries-i18n')
 
 class LastController {
 
@@ -31,7 +31,7 @@ class LastController {
         data,
         countries: countries.map(countryObj => ({
           ...countryObj,
-          label: i18n(countryObj.country)
+          label: t(countryObj.country)
         }))
       }
     }
@@ -76,7 +76,7 @@ class LastController {
       })
         .map(countryObj => ({
           ...countryObj,
-          label: i18n(countryObj.country)
+          label: t(countryObj.country)
         }))
 
       return {
