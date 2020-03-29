@@ -71,7 +71,7 @@ class LastController {
       const countries = JSON.parse(data)
       const countryInfo = countries.filter(countryObj => {
         return countriesReq.some(country => {
-          return countryObj.country.toLowerCase().localeCompare(country.toLowerCase()) === 0
+          return countryObj.country.toLowerCase().trim().localeCompare(country.toLowerCase()) === 0
         })
       })
         .map(countryObj => ({

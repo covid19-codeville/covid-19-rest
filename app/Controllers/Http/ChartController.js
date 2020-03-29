@@ -32,8 +32,8 @@ class ChartController {
         }
 
         const countries = JSON.parse(items[i])
-        const countryObj = countries.find(countryObj => {
-          return countryObj.country.toLowerCase().localeCompare(countryName) === 0
+        const countryObj = countries.find(c => {
+          return c.country.toLowerCase().trim().localeCompare(countryName) === 0
         })
 
         rawData.push({
