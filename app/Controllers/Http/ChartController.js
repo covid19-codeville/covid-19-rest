@@ -1,4 +1,5 @@
 const Redis = use('Redis')
+const { parseCountries } = use('App/Helpers/DataHelper')
 
 class ChartController {
   /*
@@ -31,7 +32,7 @@ class ChartController {
           continue
         }
 
-        const countries = JSON.parse(items[i])
+        const { countries } = parseCountries(items[i])
         const countryObj = countries.find(c => {
           return c.country.toLowerCase().trim().localeCompare(countryName) === 0
         })
