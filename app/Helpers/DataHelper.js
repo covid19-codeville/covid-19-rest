@@ -15,5 +15,9 @@ module.exports = {
     }
 
     return countries
+  },
+
+  parseAreas (json = '') {
+    return JSON.parse(json)
   }
 }

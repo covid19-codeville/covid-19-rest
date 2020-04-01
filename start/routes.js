@@ -24,5 +24,8 @@ Route.group(() => {
   Route.get('last/join/:country', 'LastController.countries')
   Route.get('last/in/:country', 'LastController.country')
 
+  Route.get('russia/last', 'RussiaController.index')
+  Route.get('russia/last/full', 'RussiaController.full')
+
   Route.get('chart/:country', 'ChartController.index')
 }).prefix('api/v1')
