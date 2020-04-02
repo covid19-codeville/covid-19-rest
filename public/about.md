@@ -18,7 +18,7 @@ You can simply grab data with any http-request library you want, for example in 
   $data = json_decode($rawJson, true);
 ```
 
-Also, if you want to use CORS with this API for server-less application please send me [e-mail](mailto:aloha@codeville.ru), i will add your host to acceptable CORS hosts list.
+Also, if you want create client only javascript application please send me [e-mail](mailto:aloha@codeville.ru), i will add your host to acceptable CORS hosts list.
 
 ### Used data sources:
 
