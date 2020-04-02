@@ -24,12 +24,12 @@ class RussiaController {
 
     try {
       const totals = JSON.parse(totalsJSON)
-      const { areas } = parseAreas(areasJSON)
+      const { areas: regions } = parseAreas(areasJSON)
 
       return {
         updated: parseInt(updated),
         totals,
-        areas
+        regions
       }
     }
     catch (err) {

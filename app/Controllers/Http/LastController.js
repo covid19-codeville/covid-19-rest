@@ -53,7 +53,7 @@ class LastController {
     if (result.updated) {
       return {
         updated: result.updated,
-        items: result.items.shift()
+        country: result.countries.shift()
       }
     }
 
@@ -89,7 +89,7 @@ class LastController {
 
       return {
         updated: parseInt(updated),
-        items: countryInfo
+        countries: countryInfo
       }
     }
 
