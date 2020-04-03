@@ -4,7 +4,7 @@ const { parseAreas } = use('App/Helpers/DataHelper')
 
 class RussiaController {
   async index () {
-    const [ data = '{}', updated = 0 ] = await Redis.zrange('cv19:ru_totals', 0, 1, 'WITHSCORES')
+    const [ data = '{}', updated = 0 ] = await Redis.zrevrange('cv19:ru_totals', 0, 1, 'WITHSCORES')
 
     try {
       return {
